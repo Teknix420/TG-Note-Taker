@@ -21,7 +21,7 @@ app.post("/api/notes", function (req, res) {
     var id = { id: req.body.title };
     var merge = { ...id, ...req.body };
     db.unshift(merge);
-    fs.writeFile("../../../db/db.json", JSON.stringify(db), function (err) {
+    fs.writeFile("./db/db.json", JSON.stringify(db), function (err) {
         if (err) throw err;
     });
 });
@@ -30,7 +30,7 @@ app.delete("/api/notes/:id", function (req, res) {
     for (var i = 0; db.length; i++) {
         if (db[i].id === req.params.id) {
             db.splice(i, 1);
-            fs.writeFile("../../../db/db.json", JSON.stringify(db), function (err) {
+            fs.writeFile("./db/db.json", JSON.stringify(db), function (err) {
                 if (err) throw err;
             });
             return db;
