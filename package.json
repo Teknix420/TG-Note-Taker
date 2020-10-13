@@ -4,8 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node public/assets/js/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node public/assets/js/server.js"
   },
   "author": "",
   "license": "ISC",
