@@ -4,7 +4,7 @@ var db = require('../../../db/db.json');
 var fs = require('fs');
 
 var app = express();
-var PORT = 8080;
+var port = process.env.PORT || 8080;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -50,6 +50,6 @@ app.get("/assets/js/index.js", function (req, res) {
     res.sendFile(path.join(__dirname, "./index.js"));
 });
 
-app.listen(PORT, function () {
-    console.log('Server listening on port: ' + PORT);
+app.listen(port, function () {
+    console.log('Server listening on port: ' + port);
 });
